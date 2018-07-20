@@ -3,7 +3,7 @@ const path = require('path'); //
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: ['babel-polyfill','./src/js/index.js'], //my entry point
+    entry: ['babel-polyfill','./src/js/index.js'], 
     output: {
         path: path.resolve(__dirname,'dist'),
         filename: 'js/bundle.js'
@@ -17,11 +17,11 @@ module.exports = {
             template: './src/index.html'
         })
     ],
-    module: { //loadereknek
+    module: { 
         rules: [
             {
-                test: /\.js$/, //megnezi hogy a file vege .js-e, ha ay apply babael loader
-                exclude: /node_modules/, //itt ne keressen js fileokat
+                test: /\.js$/, 
+                exclude: /node_modules/, 
                 use: {
                     loader: 'babel-loader'
                 }
@@ -31,14 +31,3 @@ module.exports = {
     
 };
 
-//webpack 4 concepts: entry point, output, loaders, plugins
-
-/*
-plugins complete processing of files
-*/
-//Babel ES6 bol ES5 ot keszit
-/*
-Preset: collection of code transform plugins, aplly transformation to my code
-env--> envireonment
-
-*/
